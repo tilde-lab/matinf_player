@@ -36,3 +36,7 @@ $optimade_cifplayer_app $mol_drop
 			<= Paste_example $mol_button_minor
 				title \Show example
 				click? <=> paste_example? null
+			<= Green_triangle_icon $mol_link
+				uri \https://absolidix.com
+				sub /
+					<= Icon $mol_icon_play_outline
