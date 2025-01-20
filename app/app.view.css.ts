@@ -45,6 +45,12 @@ namespace $.$$ {
 			},
 		},
 
+		Data_text: {
+			font: {
+				family: 'inherit',
+			},
+		},
+
 		Body: {
 			flex: { 
 				direction: 'column',

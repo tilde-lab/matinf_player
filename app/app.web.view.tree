@@ -29,6 +29,8 @@ $optimade_cifplayer_app $mol_drop
 			data <= data_str? \
 			vibrate? => vibrate?
 			unvibrate => unvibrate
+			fullscreen false
+			light_theme_auto null
 	Start $mol_view
 		sub /
 			<= Start_message $mol_text

@@ -11,7 +11,7 @@ namespace $.$$ {
 	export class $optimade_cifplayer_player extends $.$optimade_cifplayer_player {
 
 		@ $mol_mem
-		external_theme_auto() {
+		light_theme_auto() {
 			this.$.$mol_lights( true )
 		}
 
@@ -157,18 +157,20 @@ namespace $.$$ {
 
 		@ $mol_mem
 		controls_target() {
-			const cell_center = this.cell_center()
+			let cell_center = this.cell_center()
 
 			if( !cell_center ) {
 				const atoms = this.structure_3d_data().atoms
 
-				return atoms.reduce(( acc: InstanceType< THREE["Vector3"] >, atom ) => {
+				cell_center = atoms.reduce(( acc: InstanceType< THREE["Vector3"] >, atom ) => {
 					const { x, y, z } = atom
 					return acc.add( new THREE.Vector3( x, y, z ) )
 				}, new THREE.Vector3() ).divideScalar( atoms.length )
 			}
 
-			return this.centered() ? cell_center.clone() : new THREE.Vector3()
+			const [ a, b, c ] = this.translate_cells()
+
+			return this.centered() ? cell_center.clone().multiply( new THREE.Vector3( a, b, c ) ) : new THREE.Vector3()
 		}
 
 		@ $mol_mem

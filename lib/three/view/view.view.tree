@@ -12,3 +12,5 @@ $optimade_cifplayer_lib_three_view $mol_view
 		<= controls_target_changed null
 		<= resize null
 		<= start_render_loop null
+	event *
+		pointerdown? <=> pointerdown? null
