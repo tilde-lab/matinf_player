@@ -99,16 +99,28 @@ namespace $.$$ {
 
 		@ $mol_mem
 		message_visible() {
-			return this.message() ? super.message_visible() : []
+			if( this.error() ) return [ this.Error_card() ]
+			if( this.warning() ) return [ this.Warning_card() ]
+			return []
 		}
 
 		@ $mol_mem
-		message(): string {
+		warning(): string {
+			try {
+				return this.structure_3d_data()?.warning ?? ''
+			} catch( error ) {
+				return ''
+			}
+		}
+
+		@ $mol_mem
+		error(): string {
 			try {
 				this.structure_3d_data()
 				return ''
 
-			} catch ( error: any ) {
+			} catch( error: any ) {
+				this.$.$mol_fail_log( error )
 				return error.message || error
 			}
 		}

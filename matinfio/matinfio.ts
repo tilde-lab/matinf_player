@@ -54,6 +54,8 @@ namespace $ {
 		cartesian: boolean,
 		mpds_demo: boolean,
 		mpds_data: boolean,
+
+		warning?: string,
 	}
 
 	export type $optimade_cifplayer_matinfio_player_obj = {
@@ -69,6 +71,8 @@ namespace $ {
 		info: string,
 		mpds_demo: boolean,
 		mpds_data: boolean,
+
+		warning?: string,
 	}
 
 	export class $optimade_cifplayer_matinfio extends $mol_object2 {

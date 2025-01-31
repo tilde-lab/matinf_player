@@ -35,7 +35,9 @@ namespace $ {
 			ng_name: parseInt( crystal.ng_name ),
 			info: crystal.info,
 			mpds_data: crystal.mpds_data,
-			mpds_demo: crystal.mpds_demo
+			mpds_demo: crystal.mpds_demo,
+
+			warning: crystal.warning,
 		}
 
 		const groups: { fpos: number[] | null, cpos: number[], atoms: $optimade_cifplayer_matinfio_internal_obj_atom[] }[] = []

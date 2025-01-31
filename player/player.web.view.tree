@@ -118,11 +118,11 @@ $optimade_cifplayer_player $mol_view
 						\
 							\display none
 						S \elements
-		^ message_visible / <= Message $mol_view
-			sub /
-				<= Message_card $mol_card
-					theme \$mol_theme_special
-					title <= message \
+		^ message_visible /
+			<= Error_card $mol_card
+				title <= error \
+			<= Warning_card $mol_card
+				title <= warning \
 	colors_light *
 		a \#990000
 		b \#009900

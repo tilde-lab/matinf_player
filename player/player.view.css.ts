@@ -1,5 +1,19 @@
 namespace $.$$ {
 
+	const Message_card = {
+		position: 'absolute',
+		zIndex: 1,
+		top: '6rem',
+		width: '100%',
+		align: {
+			items: 'center'
+		},
+		background: {
+			color: 'transparent',
+		},
+		boxShadow: 'none',
+	} as const
+
 	$mol_style_define( $optimade_cifplayer_player, {
 
 		background: {
@@ -136,19 +150,24 @@ namespace $.$$ {
 			height: '2rem',
 		},
 
-		Message: {
-			position: 'absolute',
-			zIndex: 1,
-			top: '6rem',
-			left: 0,
-			right: 0,
+		Error_card: {
+			...Message_card,
+			
+			Content: {
+				background: {
+					color: $optimade_cifplayer_theme.error,
+				},
+			},
 		},
 
-		Message_card: {
-			background: {
-				color: $mol_theme.back,
+		Warning_card: {
+			...Message_card,
+
+			Content: {
+				background: {
+					color: $optimade_cifplayer_theme.warning,
+				},
 			},
-			margin: 'auto',
 		},
 
 		Three: {

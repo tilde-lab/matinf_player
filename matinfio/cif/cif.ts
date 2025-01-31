@@ -100,8 +100,12 @@ namespace $ {
 				continue
 
 			} else if( fingerprt.startsWith( '_cif_error' ) ) { // custom tag
-				const error_message = cur_line.substr( 12, cur_line.length - 13 )
+				const error_message = cur_line.substr( 11, cur_line.length - 11 )
 				return this.$mol_fail( new $mol_data_error( error_message ) )
+
+			} else if( fingerprt.startsWith( '_cif_warning' ) ) { // custom tag
+				cur_structure.warning = cur_line.substr( 13, cur_line.length - 13 )
+				continue
 
 			} else if( fingerprt.startsWith( '_pauling_file_entry' ) ) { // custom tag
 				cur_structure.mpds_data = true

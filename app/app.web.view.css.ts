@@ -55,6 +55,7 @@ namespace $.$$ {
 			flex: { 
 				direction: 'column',
 				grow: 1,
+				shrink: 1,
 			},
 		},
 

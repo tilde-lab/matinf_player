@@ -1,0 +1,9 @@
+[mol_theme="$mol_theme_light"] {
+	--optimade_cifplayer_theme_error: hsl(0, 87%, 69%);
+	--optimade_cifplayer_theme_warning: hsl(290, 61%, 80%);
+}
+
+[mol_theme="$mol_theme_dark"] {
+	--optimade_cifplayer_theme_error: hsl(0, 59%, 26%);
+	--optimade_cifplayer_theme_warning: hsl(290, 53%, 28%);
+}
